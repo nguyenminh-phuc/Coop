@@ -45,4 +45,14 @@ struct Triangle *Triangle_new(int a, int b);
 
 void Shape_delete(struct Shape *self);
 
+const char *Shape_get_type(const struct Shape *self);
+
+const char *Rectangle_get_type(const struct Rectangle *self);
+
+const char *Triangle_get_type(const struct Triangle *self);
+
+int Rectangle_get_area(const struct Rectangle *self);
+
+int Triangle_get_area(const struct Triangle *self);
+
 #endif

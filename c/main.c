@@ -4,7 +4,7 @@
 static void try_stack(void) {
     struct Triangle triangle;
     Triangle_construct(&triangle, 1, 2);
-    triangle.base.vptr->get_type(&triangle.base);
+    Triangle_get_type(&triangle);
     Triangle_destruct(&triangle);
 }
 

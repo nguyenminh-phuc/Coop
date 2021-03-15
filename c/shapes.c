@@ -2,31 +2,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static const char *Shape_get_type(const struct Shape *self) {
-    printf("Shape_get_type\n");
-    return "shape";
-}
-
-static const char *Rectangle_get_type(const struct Rectangle *self) {
-    printf("Rectangle_get_type\n");
-    return "rectangle";
-}
-
-static const char *Triangle_get_type(const struct Triangle *self) {
-    printf("Triangle_get_type\n");
-    return "triangle";
-}
-
-static int Rectangle_get_area(const struct Rectangle *self) {
-    printf("Rectangle_get_area\n");
-    return self->base.a * self->base.b;
-}
-
-static int Triangle_get_area(const struct Triangle *self) {
-    printf("Triangle_get_area\n");
-    return (self->base.a * self->base.b) / 2;
-}
-
 static const struct IShape Shape_IShape = {
         .destruct = Shape_destruct,
         .get_type = Shape_get_type,
@@ -114,4 +89,29 @@ void Shape_delete(struct Shape *self) {
 
     self->vptr->destruct(self);
     free(self);
+}
+
+const char *Shape_get_type(const struct Shape *self) {
+    printf("Shape_get_type\n");
+    return "shape";
+}
+
+const char *Rectangle_get_type(const struct Rectangle *self) {
+    printf("Rectangle_get_type\n");
+    return "rectangle";
+}
+
+const char *Triangle_get_type(const struct Triangle *self) {
+    printf("Triangle_get_type\n");
+    return "triangle";
+}
+
+int Rectangle_get_area(const struct Rectangle *self) {
+    printf("Rectangle_get_area\n");
+    return self->base.a * self->base.b;
+}
+
+int Triangle_get_area(const struct Triangle *self) {
+    printf("Triangle_get_area\n");
+    return (self->base.a * self->base.b) / 2;
 }
